@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" class="overflow-hidden">
+  <head>
+    <title>internet hotspot > login</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="expires" content="-1" />
+    <meta
+      name="viewport"
+      content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"
+    />
+
+	<link href="dist/output.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="dist/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+
+  </head>
+
+  <body class="relative min-h-screen subpixel-antialiased text-white bg-[#317546] overflow-x-hidden overflow-y-hidden">
+    $(if chap-id)
+    <form name="sendin" action="$(link-login-only)" method="post">
+      <input type="hidden" name="username" />
+      <input type="hidden" name="password" />
+      <input type="hidden" name="dst" value="$(link-orig)" />
+      <input type="hidden" name="popup" value="true" />
+    </form>
+
+    <script type="text/javascript" src="/md5.js"></script>
+    <script type="text/javascript">
+      <!--
+      function doLogin() {
+        document.sendin.username.value = document.login.username.value;
+        document.sendin.password.value = hexMD5(
+          "$(chap-id)" + document.login.password.value + "$(chap-challenge)"
+        );
+        document.sendin.submit();
+        return false;
+      }
+      //-->
+    </script>
+    $(endif)
+
+	<img class="absolute top-0 overflow-hidden scale-150 -z-10 opacity-30 lg:hidden" src="dist/bg-phone.svg" alt="">
+	<img class="absolute top-0 overflow-hidden w-screen -z-10 opacity-30 lg:visible invisible" src="dist/bg-pc.svg" alt="">
+
+    <div class="p-5">
+		<div class="flex items-center justify-between gap-x-3 mb-5 ">
+			<img src="dist/logo.png" class="w-24" alt="logo" />
+			<div class="bg-white rounded-lg">
+		  <img src="dist/igrey white.png" class="w-48" alt="logo" />
+		</div>
+  
+		  </div>
+		<h1 class="text-5xl">
+			Free Public <br> 
+
+			<div class="text-7xl mt-3">
+				WI-FI
+			</div>
+		</h1>
+
+		$(if trial == 'yes')
+		<form action="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">
+		  <button type="button" class="mt-5 text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-full text-base px-6 py-3.5 text-center inline-flex items-center dark:focus:ring-gray-800 dark:bg-white dark:border-gray-700 dark:text-gray-900 dark:hover:bg-gray-200 mr-2 mb-2">
+			  Join for Free
+			</button>
+	  </form>
+		$(endif)
+
+		$(if error)<br />
+		<div style="color: #ff8080; font-size: 9px">$(error)</div>
+		$(endif)
+ 
+    </div>
+ 
+	<img class="absolute -z-10 overflow-hidden lg:w-[20vw] w-[45vh] -bottom-20 -right-16" src="dist/kit.png" alt="" />
+
+	<div class="absolute bottom-5 left-5 ">
+		<p class="mt-4 text-3xl drop-shadow ">
+			<span class=" text-stroke text-stroke-black">A PROJECT OF </span>
+			<br>
+			<span class="font-bold text-[#317546] text-6xl text-stroke text-stroke-white">Kit <br> Sta. Maria</span>
+		</p>
+	</div>
+
+
+	
+
+     
+
+         
+
+    <script type="text/javascript">
+      <!--
+      document.login.username.focus();
+      //-->
+    </script>
+  </body>
+</html>
